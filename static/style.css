@@ -1,43 +1,140 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #000000, #001f3f, #0074D9, #7FDBFF, #87CEEB);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    color: #ffffff;
 }
-
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.85); /* More transparent for contrast */
+    padding: 35px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);  /* This adds depth */
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.2), 
+        0 25px 50px rgba(0, 0, 0, 0.25);  /* Stronger multi-layered shadows */
     text-align: center;
-    width: 300px;
+    width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pop-in 0.5s ease-out;
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #0288d1;
-    border-radius: 5px;
-    font-size: 16px;
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #0288d1;
-    color: white;
+h1 {
+    font-size: 2.2rem;
+    color: #004080;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 90%;
+    padding: 12px 15px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f0f8ff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.2s ease;
 }
 
-.result {
-    margin-top: 20px;
+input[type="text"]:focus {
+    border: 2px solid #0074D9;
+    background-color: #e6f2ff;
 }
 
+/* Button */
+button {
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Weather Output Box */
+.result,
 .error {
-    color: red;
+    margin-top: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.0;
+    font-family: 'Comic Sans MS';
+}
+
+.result h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00509e;
+  background: #e6f0ff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    margin: auto; /* Centers the table */
+    border-collapse: collapse; /* Removes row spacing */
+}
+
+td {
+    padding: 10px; /* Adds spacing for better readability */
+    font-size: 24px; /* Makes values big */
+    text-align: center; /* Centers text */
+}
+
+.result-text {
+    font-weight: bold; /* Makes text bold */
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Sets comic font */
+    font-size: 18px; /* Makes text smaller than values */
+}
+
+.temp {
+    font-size: 30px; /* Makes temperature the biggest */
+    font-weight: bold;
+}
+
+table td:nth-child(2) {
+    padding-left: 30px;
+    padding-right: 30px; /* Adds 30px spacing between columns */
+}
+
+tr {
+    display: table-row; 
+}
+
+.condition
+{
+    font-size: large;
 }

@@ -9,7 +9,7 @@
     <div class="container">
         <h1>🌦️Weather App</h1>
         <form method="POST">
-            <input type="text" name="city" placeholder="enter city name" required>
+            <input type="text" name="city" placeholder="Enter city name" required>
             <button type="submit">Get Weather</button>
         
         </form>
@@ -20,9 +20,18 @@
             {% else %}
                 <div class="result">
                     <h2>{{ weather.city }}</h2>
-                    <p>🌡️ Temperature: {{ weather.temp }} °C </p>
-                    <p>☁️ Condition: {{ weather.condition }}</p>
-                    <p>💧 Humidity: {{ weather.humidity }}%</p>
+                    <table>
+                        <tr>
+                            <td class="result-value condition">☁☁️ <br>{{ weather.condition }} </td>
+                            <td class="result-value temp"> 🌡️{{ weather.temp }} °C </td>
+                            <td class="result-value"> 💧{{ weather.humidity }}%</td>
+                        </tr>     
+                        <tr>
+                            <td class="result-text">  Condition</td>
+                            <td class="result-text"> Temperature </td>
+                            <td class="result-text"> Humidity</td>
+                        </tr>                    
+                    </table>
                 </div>
             {% endif %}
         {% endif %}
